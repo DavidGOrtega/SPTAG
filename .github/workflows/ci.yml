@@ -22,4 +22,4 @@ jobs:
         with:
           artifacts: "Release/*"
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ git.commit }}
+          tag: "v1"
