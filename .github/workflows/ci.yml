@@ -16,6 +16,6 @@ jobs:
           cd build && cmake .. && make
 
       - uses: ncipollo/release-action@v1
-      with:
-        artifacts: "Release/*"
-        token: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          artifacts: "Release/*"
+          token: ${{ secrets.GITHUB_TOKEN }}
