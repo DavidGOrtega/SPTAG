@@ -12,6 +12,7 @@ jobs:
       - name: build
         shell: bash
         run: |
+          apt update && apt install -y swig libboost-all-dev
           mkdir build
           cd build && cmake .. && make
 
