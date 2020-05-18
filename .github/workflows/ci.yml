@@ -12,7 +12,9 @@ jobs:
       - name: build
         shell: bash
         run: |
-          sudo apt-get update && sudo apt-get install -y swig libboost1.68-dev
+          sudo apt-get remove libboost-all-dev
+          sudo add-apt-repository ppa:mhier/libboost-latest
+          sudo apt-get update && sudo apt-get install -y swig libboost1.68 libboost1.68-dev
           mkdir build
           cd build && cmake .. && make
 
