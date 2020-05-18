@@ -1,0 +1,21 @@
+name: train-my-model
+
+on: [push]
+
+jobs:
+  run:
+    runs-on: [ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: build
+        shell: bash
+        run: |
+          mkdir build
+          cd build && cmake .. && make
+
+      - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "Release/*"
+        token: ${{ secrets.GITHUB_TOKEN }}
